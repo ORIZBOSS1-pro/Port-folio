@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <title>KOB TECH STORE</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+<style>
+  /* =========================================================
+   KOB TECH STORE
+   PROFESSIONAL MAIN STYLESHEET
+========================================================= */
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fa;
+  color: #222;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   GLOBAL HEADER
+========================= */
+
+.global-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+  background: #07111f;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+.global-navbar {
+  min-height: 75px;
+  max-width: 1250px;
+  margin: auto;
+
+  padding: 0 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.global-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 22px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.global-logo span {
+  color: #00d4ff;
+}
+
+.logo-bolt {
+  color: #ffd000;
+
+  font-size: 28px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-card {
+  min-height: 570px;
+
+  padding: 70px 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      rgba(3, 12, 25, .82),
+      rgba(3, 12, 25, .82)
+    ),
+    url("tech.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.icon-wrapper {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #00b8db;
+  color: white;
+  font-size: 40px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 30px rgba(0, 184, 219, .35);
+}
+.hero-card h1 {
+  font-size: clamp(38px, 6vw, 70px);
+  max-width: 900px;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  text-shadow: 0 5px 20px rgba(0, 0, 0, .5);
+}
+.hero-card p {
+  max-width: 750px;
+  font-size: 18px;
+  color: #e5e7eb;
+}
+.hero-card b {
+  color: #ffd000;
+}
+
+
+/* =========================
+   LEARN MORE
+========================= */
+
+.learnmore {
+  display: inline-block;
+
+  margin-top: 30px;
+
+  padding: 14px 28px;
+
+  background: #ffd000;
+
+  color: #07111f;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  border-radius: 50px;
+
+  transition: .3s;
+}
+
+.learnmore:hover {
+  transform: translateY(-4px);
+
+  background: #00d4ff;
+
+  color: white;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,.3);
+}
+
+
+/* =========================================================
+   QUICK DIRECTION MENU
+========================================================= */
+
+.AB {
+  background: white;
+
+  padding: 15px;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,.1);
+
+  position: sticky;
+
+  top: 75px;
+
+  z-index: 100;
+}
+
+.AB .menu {
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+.AB .menu a {
+  padding: 10px 15px;
+
+  text-decoration: none;
+
+  color: #07111f;
+
+  font-weight: bold;
+
+  border-radius: 7px;
+
+  transition: .3s;
+}
+
+.AB .menu a:hover {
+  background: #07111f;
+
+  color: #00d4ff;
+}
+
+.AB .menu .office {
+  background: #ffd000;
+
+  color: #07111f;
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+.section {
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 90px 25px;
+}
+
+.section-title {
+  text-align: center;
+
+  color: #07111f;
+
+  font-size: 38px;
+
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+
+  color: #667085;
+
+  max-width: 700px;
+
+  margin: 0 auto 40px;
+}
+
+
+/* =========================================================
+   REPAIR SECTION
+========================================================= */
+
+.repair-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
+}
+/* =========================================
+   REPAIR IMAGE
+========================================= */
+.repair-info {
+  width: 100%;
+}
+.repair-info img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 15px;
+}
+/* =========================================
+   FEATURES
+========================================= */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+.features-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+.features-list i {
+  font-size: 16px;
+}
+/* =========================================
+   FORM
+========================================= */
+.form-card {
+  width: 100%;
+  padding: 25px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow:
+    0 5px 25px rgba(0, 0, 0, 0.10);
+}
+/* =========================================
+   INPUT GROUP
+========================================= */
+.input-grp {
+  margin-bottom: 18px;
+}
+.input-grp label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+/* =========================================
+   INPUTS
+========================================= */
+.input-grp input,
+.input-grp select,
+.input-grp textarea {
+  width: 100%;
+  padding: 13px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: 0.3s;
+}
+/* INPUT FOCUS */
+.input-grp input:focus,
+.input-grp select:focus,
+.input-grp textarea:focus {
+  border-color: #25D366;
+  box-shadow:
+    0 0 0 3px rgba(37, 211, 102, 0.12);
+}
+/* TEXTAREA */
+.input-grp textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+/* =========================================
+   WHATSAPP BOOKING BUTTON
+========================================= */
+.full-btn {
+  width: 100%;
+  min-height: 50px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+.full-btn:hover {
+  transform: translateY(-2px);
+}
+.full-btn i {
+  font-size: 20px;
+}
+/* =========================================
+   TABLET
+========================================= */
+@media (max-width: 900px) {
+  .repair-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 700px;
+  }
+  .repair-info img {
+    height: 350px;
+  }
+}
+/* =========================================
+   MOBILE
+========================================= */
+@media (max-width: 600px) {
+  .repair-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 25px;
+  }
+  .repair-info img {
+    height: 250px;
+    border-radius: 12px;
+  }
+  .features-list li {
+    font-size: 14px;
+  }
+  .form-card {
+    padding: 18px;
+    border-radius: 12px;
+  }
+  .input-grp input,
+  .input-grp select,
+  .input-grp textarea {
+    font-size: 16px;
+    padding: 13px;
+  }
+  .full-btn {
+    font-size: 15px;
+    padding: 14px;
+  }
+}
+/* =========================================
+   SMALL PHONES
+========================================= */
+@media (max-width: 380px) {
+  .repair-container {
+    padding: 10px;
+  }
+  .form-card {
+    padding: 15px;
+  }
+  .repair-info img {
+    height: 220px;
+  }
+}
+
+.repair-info {
+  background: white;
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 35px rgba(0,0,0,.1);
+}
+
+.repair-info img {
+  width: 100%;
+
+  height: 300px;
+
+  object-fit: cover;
+}
+
+.features-list {
+  list-style: none;
+
+  padding: 25px;
+}
+
+.features-list li {
+  margin-bottom: 15px;
+
+  color: #444;
+}
+
+.features-list i {
+  color: #00a8cc;
+
+  margin-right: 8px;
+}
+
+
+/* =========================
+   FORMS
+========================= */
+
+.form-card,
+.contact-form-wrapper,
+.signin-form {
+  background: white;
+
+  padding: 35px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 35px rgba(0,0,0,.1);
+}
+
+.input-grp,
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-grp label,
+.form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #333;
+
+  font-weight: bold;
+}
+
+.input-grp input,
+.input-grp select,
+.input-grp textarea,
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+
+  padding: 13px;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 7px;
+
+  outline: none;
+
+  font-size: 15px;
+
+  background: white;
+}
+
+.input-grp input:focus,
+.input-grp select:focus,
+.input-grp textarea:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #00a8cc;
+
+  box-shadow: 0 0 0 3px rgba(0,168,204,.1);
+}
+
+
+/* BUTTONS */
+
+.secondary-btn,
+.submit-btn {
+  width: 100%;
+
+  border: none;
+
+  padding: 14px;
+
+  border-radius: 7px;
+
+  background: #07111f;
+
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.secondary-btn:hover,
+.submit-btn:hover {
+  background: #00a8cc;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section {
+  background: white;
+  padding: 100px 25px;
+}
+.about-container {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.about-text h2 {
+  color: #07111f;
+  font-size: 45px;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+.about-text p {
+  color: #667085;
+  margin-bottom: 15px;
+}
+.about-text strong {
+  color: #07111f;
+}
+.about-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0,0,0,.18);
+  transition: .3s;
+}
+.about-image img:hover {
+  transform: scale(1.02);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  background: #050b13;
+  color: white;
+  padding: 55px 25px 20px;
+}
+.footer-content {
+  max-width: 1150px;
+  margin: auto;
+  text-align: center;
+}
+.footer-content h3 {
+  font-size: 30px;
+  color: white;
+  margin-bottom: 15px;
+}
+.footer-content h3 span {
+  color: #00d4ff;
+}
+.footer-content p {
+  color: #aab4c0;
+  margin: 8px 0;
+}
+.footer-bottom {
+  border-top: 1px solid #243244;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+.footer-bottom b {
+  color: #ffd000;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .repair-container,
+  .contact-container,
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .global-logo {
+    font-size: 17px;
+  }
+
+  .logo-bolt {
+    font-size: 22px;
+  }
+
+  .hero-card {
+    min-height: 500px;
+  }
+
+  .hero-card h1 {
+    font-size: 40px;
+  }
+
+  .hero-card p {
+    font-size: 15px;
+  }
+
+  .AB {
+    position: static;
+  }
+
+  .AB .menu {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .AB .menu a {
+    text-align: center;
+
+    font-size: 13px;
+  }
+
+  .section {
+    padding: 60px 18px;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .repair-info img {
+    height: 220px;
+  }
+
+  .form-card,
+  .contact-form-wrapper,
+  .signin-form,
+  .signup-box {
+    padding: 25px 18px;
+  }
+
+  .contact-container {
+    padding: 60px 18px;
+  }
+
+  .contact-info {
+    padding: 25px 20px;
+  }
+
+  .contact-info h2,
+  .contact-form-wrapper h2 {
+    font-size: 28px;
+  }
+
+  .about-section {
+    padding: 60px 18px;
+  }
+
+  .about-text h2 {
+    font-size: 35px;
+  }
+
+  .brand-header h1 {
+    font-size: 27px;
+  }
+
+}
+</style>
+<body>
+  
+     <!-- Global Navigation Bar -->
+   <header class="global-header">
+     <nav class="global-navbar">
+       <a href="KOB.html" class="global-logo">
+         <i class="fa-solid fa-bolt logo-bolt"></i>
+         KOB <span>TECH</span>
+       </a>
+     </nav>
+   </header>
+ 
+  <!--Main Content -->
+ <main>
+  <div class="hero-card">
+    <div class="icon-wrapper">
+      <i class="fa-solid fa-house-laptop"></i>
+    </div>
+    <h1>Welcome to KOB Tech</h1>
+    <p>Use the form below to schedule a repair service with us and get a  premium and performance post repair warranty.<br><b> We give the best to our customers</b></p>
+    <a href="#about" class="learnmore">
+      LEARN MORE <i class="fa-solid fa-arrow-right" style="font-size: 0.85rem;"></i>
+    </a>
+  </div>
+</main>
+
+<!-- Direction Link -->
+<nav class="AB">
+    <div class="menu">
+      <a href="#repair">⚙ Schedule a Repair</a>
+      <a href="#footer">🏪 Service Hour</a>
+      <a href="index.html" class="office">Port Folio</a>
+      <a href="resume.html" class="office">Resume/CV</a>
+    </div>
+</nav>
+
+
+<!-- ===============================
+     REPAIR SERVICE BOOKING
+================================ -->
+<section id="repair" class="section">
+  <h2 class="section-title">Schedule a Repair Service</h2>
+  <p class="section-subtitle">
+    Our certified engineers fix cooling issues, gas leaks, motor failures, and more.
+  </p>
+  <div class="repair-container">
+    <!-- REPAIR INFORMATION -->
+    <div class="repair-info">
+      <img
+        src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80"
+        alt="Technician Repairing Appliance"
+      >
+      <ul class="features-list">
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          Same-day doorstep inspection
+        </li>
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          90-day post-repair warranty
+        </li>
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          Original manufacturer spare parts
+        </li>
+      </ul>
+    </div>
+    <!-- BOOKING FORM -->
+    <form class="form-card" id="repairForm">
+      <div class="input-grp">
+        <label for="fullName">Full Name</label>
+        <input
+          type="text"
+          id="fullName"
+          required
+          placeholder="Oriz Boss.."
+        >
+      </div>
+      <div class="input-grp">
+        <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          id="phone"
+          required
+          placeholder="+234 801 234 5678"
+        >
+      </div>
+      <div class="input-grp">
+        <label for="service">Service Needed</label>
+        <select id="service" required>
+          <option value="">--Select Service--</option>
+          <option value="AC Gas Refill / Leak Repair">
+            AC Gas Refill / Leak Repair
+          </option>
+          <option value="AC Not Cooling">
+            AC Not Cooling
+          </option>
+          <option value="Fridge Freezing/Cooling Issue">
+            Fridge Freezing/Cooling Issue
+          </option>
+          <option value="Compressor Replacement">
+            Compressor Replacement
+          </option>
+          <option value="General Servicing & Cleaning">
+            General Servicing & Cleaning
+          </option>
+        </select>
+      </div>
+      <div class="input-grp">
+        <label for="date">Preferred Date</label>
+        <input
+          type="date"
+          id="date"
+          required
+        >
+      </div>
+      <div class="input-grp">
+        <label for="address">Address</label>
+        <textarea
+          id="address"
+          rows="3"
+          required
+          placeholder="Enter service address..."
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="btn secondary-btn full-btn"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+        Confirm Service Booking
+      </button>
+    </form>
+  </div>
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="about-container">
+    <div class="about-text">
+      <h2>About K O B TECH</h2>
+      <p>At <strong>KOB TECH</strong>,We provide services for repairing of refrigerator, Air conditioner and other electrical appliance at a convenient rate and guarantee a long lasting service duration.</p>
+    </div>
+    <div class="about-image">
+     <img src="tech.png">
+    </div>
+  </div>
+</section> 
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content" id="footer">
+    <h3>KOB <span>TECH STORE</span></h3>
+    <p>12, Ore Ofe Way, Ntabo, Ijoko, Sango Ota, Ogun State | Phone: +234 (70) 4745-1820</p>
+    <p>Oduduwa University Ipetumodu, Ile-Ife, Osun State</p>
+    <p>Available Daily for services: 10:00 AM</p>
+    <div class="footer-bottom">
+      <p><b>2026 KING TECH STORE<sup>&COPY;</sup></b> | Quality • Power • Performance<br>All Rights Reserved.</p></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ==========================================
+// KOB TECH STORE
+// WHATSAPP REPAIR BOOKING
+// ==========================================
+document.addEventListener("DOMContentLoaded", function() {
+  const repairForm = document.getElementById("repairForm");
+  // Check that the form exists
+  if (!repairForm) {
+    console.error("Repair form not found.");
+    return;
+  }
+  repairForm.addEventListener("submit", function(event) {
+    // Prevent normal form submission
+    event.preventDefault();
+    // ==========================================
+    // YOUR WHATSAPP NUMBER
+    // ==========================================
+    // IMPORTANT:
+    // Replace this with your real WhatsApp number.
+    //
+    // Example:
+    // 08012345678
+    //
+    // becomes:
+    // 2348012345678
+    const whatsappNumber = "2349045252636";
+    // ==========================================
+    // GET FORM VALUES
+    // ==========================================
+    const fullName =
+      document.getElementById("fullName").value.trim();
+    const phone =
+      document.getElementById("phone").value.trim();
+    const service =
+      document.getElementById("service").value;
+    const date =
+      document.getElementById("date").value;
+    const address =
+      document.getElementById("address").value.trim();
+    // ==========================================
+    // CHECK REQUIRED INFORMATION
+    // ==========================================
+    if (
+      fullName === "" ||
+      phone === "" ||
+      service === "" ||
+      date === "" ||
+      address === ""
+    ) {
+      alert("Please fill in all the required fields.");
+      return;
+    }
+    // ==========================================
+    // FORMAT DATE
+    // ==========================================
+    const dateObject = new Date(date + "T00:00:00");
+    const formattedDate =
+      dateObject.toLocaleDateString("en-NG", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      });
+    // ==========================================
+    // CREATE WHATSAPP MESSAGE
+    // ==========================================
+    const message =
+      `🔧 KOB TECH - REPAIR BOOKING
+Hello KOB TECH,
+I would like to schedule a repair service.
+CUSTOMER INFORMATION
+------------------------------
+👤 Full Name:
+${fullName}
+📞 Phone Number:
+${phone}
+🛠️ Service Needed:
+${service}
+📅 Preferred Date:
+${formattedDate}
+📍 Service Address:
+${address}
+Please confirm my repair booking.
+Thank you.
+KOB TECH`;
+    // ==========================================
+    // CREATE WHATSAPP LINK
+    // ==========================================
+    const whatsappURL =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      encodeURIComponent(message);
+    // ==========================================
+    // OPEN WHATSAPP
+    // ==========================================
+    window.location.href = whatsappURL;
+  });
+});
+</script>
+</body>
+</html>
