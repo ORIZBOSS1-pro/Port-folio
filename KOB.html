@@ -595,6 +595,59 @@ body {
 }
 
 
+/* Forms (Sell & Repair) */
+.form-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.light-form { background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+.form-group-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input-group.full-width { grid-column: 1 / -1; }
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #94a3b8;
+}
+
+.light-form label { color: #475569; }
+
+.input-group input, .input-group select, .input-group textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+}
+
+.estimate-box {
+  margin-top: 20px;
+  padding: 15px;
+  background: #1e293b;
+  color: #38bdf8;
+  text-align: center;
+  border-radius: 6px;
+  display: none;
+  font-weight: bold;
+}
+
+
 /* =========================================================
    ABOUT
 ========================================================= */
@@ -800,6 +853,7 @@ footer {
     <div class="menu">
       <a href="#repair">⚙ Schedule a Repair</a>
       <a href="#footer">🏪 Service Hour</a>
+      <a href="#sell">🔌 Sell your Old appliances</a><br>
       <a href="index.html" class="office">Port Folio</a>
       <a href="resume.html" class="office">Resume/CV</a>
     </div>
@@ -903,6 +957,61 @@ footer {
       </button>
     </form>
   </div>
+</section>
+
+<!-- Sell / Trade-in Section -->
+<section id="sell" class="section dark-bg">
+  <div class="container">
+    <h2 class="section-title light">Sell Your Old Appliance</h2>
+    <p class="section-subtitle light">Get instant value evaluation for your used AC or Refrigerator.</p>
+    
+    <form id="sellForm" class="form-card" onsubmit="handleEstimate(event)">
+      <div class="form-group-grid">
+        <div class="input-group">
+          <label>Appliance Type</label>
+          <select id="sellType" required>
+            <option value="">Select Type</option>
+            <option value="fridge">Refrigerator</option>
+            <option value="ac">Air Conditioner</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label>Age of Appliance</label>
+          <select id="sellAge" required>
+            <option value="1">Under 1 Year</option>
+            <option value="2">1 - 3 Years</option>
+            <option value="4">4+ Years</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label>Working Condition</label>
+          <select id="sellCondition" required>
+            <option value="excellent">Excellent (Like New)</option>
+            <option value="good">Good (Minor wear)</option>
+            <option value="faulty">Needs Repair / Faulty</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="input-group full-width">
+        <label>Brand & Model Details</label>
+        <input type="text" placeholder="e.g., Samsung French Door 2021 Model" required>
+      </div>
+      
+      <button type="submit" class="btn primary-btn full-btn">Calculate Estimated Valuation</button>
+    </form>
+    
+    <div id="estimateResult" class="estimate-box"></div>
+  </div>
+  
+ <!-- Result Display Box -->
+<div id="resultBox" style="display: none;"></div>
+
+<!-- WhatsApp Submit Button (Hidden until valuation is calculated) -->
+<button id="whatsappBtn" style="display: none; background-color: #25D366; color: white; border: none; padding: 12px 20px; font-weight: bold; border-radius: 8px; width: 100%; margin-top: 10px; cursor: pointer;">
+  Submit Request via WhatsApp
+</button>
+
 </section>
 
 
@@ -1033,6 +1142,53 @@ KOB TECH`;
     window.location.href = whatsappURL;
   });
 });
+
+
+// Trade-In / Sell Valuation Algorithm
+function handleEstimate(event) {
+  event.preventDefault();
+  
+  const type = document.getElementById('sellType').value;
+  const age = parseInt(document.getElementById('sellAge').value);
+  const condition = document.getElementById('sellCondition').value;
+  const resultBox = document.getElementById('estimateResult');
+  
+  let basePrice = type === 'fridge' ? 120000 : 100000;
+  
+  // Age deduction
+  if (age === 2) basePrice -= 40000;
+  if (age === 4) basePrice -= 60000;
+  
+  // Condition adjustment
+  if (condition === 'good') basePrice *= 0.8;
+  if (condition === 'faulty') basePrice *= 0.4;
+  
+  basePrice = Math.max(basePrice, 50); // Minimum guaranteed scrap value
+  
+  const formattedPrice = `₦${basePrice.toFixed(2)}`;
+  
+  resultBox.style.display = 'block';
+  resultBox.innerHTML = `Estimated Trade-in Offer: ${formattedPrice}<br><small>A technician will verify condition upon pickup.</small>`;
+
+  // WhatsApp Button Integration
+  const whatsappBtn = document.getElementById('whatsappBtn');
+  if (whatsappBtn) {
+    whatsappBtn.style.display = 'block';
+    whatsappBtn.onclick = function() {
+      const phoneNumber = "2349045252636"; 
+      
+      const message = `Hello, I would like to submit a sell/trade-in request:\n\n` +
+                      `*Appliance Type:* ${type}\n` +
+                      `*Condition:* ${condition}\n` +
+                      `*Estimated Valuation:* ${formattedPrice}`;
+      
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    };
+  }
+}
+
+
 </script>
 </body>
 </html>
