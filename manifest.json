@@ -1,6 +1,6 @@
 {
-  "short_name": "GPA Calc",
-  "name": "GPA & CGPA Calculator",
+  "short_name": "ORIZBOSS",
+  "name": "King ORIZ BOSS Portfolio",
   "icons": [
     {
       "src": "icon-192.png",
@@ -16,8 +16,8 @@
     }
   ],
   "start_url": "./index.html",
-  "background_color": "#ffffff",
-  "theme_color": "#4a90e2",
+  "background_color": "#0d1117",
+  "theme_color": "#6366f1",
   "display": "standalone",
   "orientation": "portrait"
 }
