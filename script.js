@@ -398,3 +398,24 @@ if (sections.length > 0 && navLinks.length > 0) {
 
 }
 
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent Chrome from automatically displaying the default bar
+    e.preventDefault();
+    deferredPrompt = e;
+    
+    // Show your custom "Install App" button in the UI
+    const installBtn = document.getElementById('pwaInstallBtn');
+    if (installBtn) {
+        installBtn.style.display = 'block';
+        
+        installBtn.addEventListener('click', async () => {
+            // Hide button once clicked
+            installBtn.style.display = 'none';
+            // Trigger native install prompt
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            console.log(`User response to install prompt: ${outcome}`);
+            deferredPrompt = null;
+        });
+    }
+});
