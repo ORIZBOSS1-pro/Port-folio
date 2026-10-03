@@ -409,11 +409,7 @@ if (newsForm) {
   newsForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Disable button while processing
-    newsBtn.disabled = true;
-    newsBtn.innerHTML = `<span>Subscribing...</span> <i class="fa-solid fa-spinner fa-spin"></i>`;
-    newsStatus.className = 'news-status-msg';
-    newsStatus.style.display = 'none';
+  
 
     const formData = new FormData(newsForm);
 
