@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<link rel="manifest" href="manifest.json">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title description" content="King ORIZ BOSS - Professional Web Developer Portfolio">
-<link rel="apple-touch-icon" href="icon-192.png">
-<title>ORIZBOSS | Web Developer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ORIZBOSS | Web Developer</title>
+  <meta name="description" content="King ORIZ BOSS - Professional Web Developer Portfolio">
+
+  <!-- PWA & Mobile Settings -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ORIZBOSS">
+  <link rel="apple-touch-icon" href="icon-192.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
 
@@ -607,42 +616,89 @@
 
 
 
-        <!-- Contact Form -->
-
-        <div class="form-cont">
-    <div class="form-head">
-        <h2>Get in Touch</h2>
-        <p>Send us a message and we'll get back to you as soon as possible.</p>
+<!-- Contact Form -->
+<div class="form-cont">
+  <div class="form-head">
+    <h2>Get in Touch</h2>
+    <p>Send us a message and we'll get back to you as soon as possible.</p>
+  </div>
+  
+  <form id="contact-form" action="https://formspree.io/f/maenrqgb" method="POST">
+    <div class="form-grp">
+      <label for="name">Full Name</label>
+      <div class="input-wrapper">
+        <i class="fa-solid fa-user input-icon"></i>
+        <input type="text" id="name" name="name" placeholder="Enter name" required>
+      </div>
     </div>
     
-    <!-- Formspree Endpoint Attached -->
-    <form id="contact-form" action="https://formspree.io/f/xbglkzyk" method="POST">
-        
-        <div class="form-grp">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter name" required>
-        </div>
-        
-        <div class="form-grp">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="name@example.com" required>
-        </div>
-        
-        <div class="form-grp">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
-        </div>
-        
-        <div class="form-grp">
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
-        </div>
-        
-        <button type="submit" id="submit-btn" class="bttn">Send Message</button>
-    </form>
+    <div class="form-grp">
+      <label for="email">Email Address</label>
+      <div class="input-wrapper">
+        <i class="fa-solid fa-envelope input-icon"></i>
+        <input type="email" id="email" name="email" placeholder="name@example.com" required>
+      </div>
+    </div>
+    
+    <div class="form-grp">
+      <label for="subject">Subject</label>
+      <div class="input-wrapper">
+        <i class="fa-solid fa-tag input-icon"></i>
+        <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+      </div>
+    </div>
+    
+    <div class="form-grp">
+      <label for="message">Your Message</label>
+      <div class="input-wrapper">
+        <i class="fa-solid fa-comment-dots input-icon textarea-icon"></i>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+      </div>
+    </div>
+    
+    <button type="submit" id="submit-btn" class="bttn">
+      <span>Send Message</span>
+      <i class="fa-solid fa-paper-plane"></i>
+    </button>
+  </form>
+</div>
 
+</section>
+
+
+<!-- Newsletter Section -->
+
+<section class="newsletter-section">
+  <div class="newsletter-cont">
+    <div class="newsletter-head">
+      <div class="news-icon">
+        <i class="fa-solid fa-paper-plane"></i>
+      </div>
+      <h2>Subscribe to My Newsletter</h2>
+      <p>Get the latest updates on my web development projects, tech insights, and coding tutorials delivered straight to your inbox.</p>
     </div>
 
+<form id="newsletter-form" action="https://formspree.io/f/xbglkzyk" method="POST">
+  <!-- Custom Email Subject Line for Your Inbox -->
+  <input type="hidden" name="_subject" value="🎉 New Subscriber on ORIZBOSS Portfolio!">
+  
+  <!-- Custom Message/Write-up Included in the Email Body -->
+  <input type="hidden" name="Writeup" value="A user has subscribed to your website newsletter. Here are the subscriber details:">
+
+  <div class="news-input-group">
+    <div class="input-wrapper">
+      <i class="fa-solid fa-envelope input-icon"></i>
+      <input type="email" id="news-email" name="email" placeholder="Enter your email address" required>
+    </div>
+    <button type="submit" id="news-submit-btn" class="bttn-news">
+      <span>Subscribe</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+  <div id="news-status" class="news-status-msg"></div>
+</form>
+
+  </div>
 </section>
 
 

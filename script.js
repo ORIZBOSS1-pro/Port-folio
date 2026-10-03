@@ -398,24 +398,97 @@ if (sections.length > 0 && navLinks.length > 0) {
 
 }
 
-window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevent Chrome from automatically displaying the default bar
+
+/*----NEWSLETTER -----*/
+
+const newsForm = document.getElementById('newsletter-form');
+const newsStatus = document.getElementById('news-status');
+const newsBtn = document.getElementById('news-submit-btn');
+
+if (newsForm) {
+  newsForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    deferredPrompt = e;
-    
-    // Show your custom "Install App" button in the UI
-    const installBtn = document.getElementById('pwaInstallBtn');
-    if (installBtn) {
-        installBtn.style.display = 'block';
-        
-        installBtn.addEventListener('click', async () => {
-            // Hide button once clicked
-            installBtn.style.display = 'none';
-            // Trigger native install prompt
-            deferredPrompt.prompt();
-            const { outcome } = await deferredPrompt.userChoice;
-            console.log(`User response to install prompt: ${outcome}`);
-            deferredPrompt = null;
-        });
+
+    // Disable button while processing
+    newsBtn.disabled = true;
+    newsBtn.innerHTML = `<span>Subscribing...</span> <i class="fa-solid fa-spinner fa-spin"></i>`;
+    newsStatus.className = 'news-status-msg';
+    newsStatus.style.display = 'none';
+
+    const formData = new FormData(newsForm);
+
+    try {
+      const response = await fetch(newsForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        newsStatus.textContent = '🎉 Thank you for subscribing!';
+        newsStatus.className = 'news-status-msg success';
+        newsForm.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      newsStatus.textContent = '❌ Something went wrong. Please try again.';
+      newsStatus.className = 'news-status-msg error';
+    } finally {
+      newsBtn.disabled = false;
+      newsBtn.innerHTML = `<span>Subscribe</span> <i class="fa-solid fa-arrow-right"></i>`;
     }
+  });
+}
+
+
+// Variable to store the install event
+let deferredPrompt;
+
+// Cache the install button element
+const installBtn = document.getElementById('pwaInstallBtn');
+
+// 1. Listen for the native PWA install prompt
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome from automatically showing the default mini-infobar
+  e.preventDefault();
+  
+  // Stash the event so it can be triggered later
+  deferredPrompt = e;
+
+  // Show your custom "Install App" button in the portfolio UI
+  if (installBtn) {
+    installBtn.style.display = 'inline-flex'; // or 'block', matching your button layout
+  }
+});
+
+// 2. Attach the click listener ONCE outside the event handler
+if (installBtn) {
+  installBtn.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+
+    // Trigger the native browser install prompt
+    deferredPrompt.prompt();
+
+    // Wait for the user to respond to the prompt
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log(`User response to install prompt: ${outcome}`);
+
+    // We no longer need the prompt, clear it out
+    deferredPrompt = null;
+
+    // Hide the install button
+    installBtn.style.display = 'none';
+  });
+}
+
+// 3. Hide the button if the app is already installed
+window.addEventListener('appinstalled', () => {
+  if (installBtn) {
+    installBtn.style.display = 'none';
+  }
+  deferredPrompt = null;
+  console.log('PWA was successfully installed');
 });
